@@ -2,7 +2,7 @@
 
     $server = "localhost";
     $user = "root";
-    $pw = "Admin";
+    $pw = "";
     $db = "teknotoppen";
 
     $conn = mysqli_connect($server, $user, $pw, $db);

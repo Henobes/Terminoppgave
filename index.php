@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teknotoppen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
         body {
             font-family: 'Dubai Medium', sans-serif;
@@ -55,7 +56,7 @@
             padding: 20px;
         }
 
-        .cta-button {
+        .cart-button {
             display: block;
             background-color: #343a40;
             color: #fff;
@@ -68,7 +69,7 @@
             transition: background-color 0.3s ease;
         }
 
-        .cta-button:hover {
+        .cart-button:hover {
             background-color: #495057;
         }
 
@@ -88,7 +89,7 @@
             margin-top: 20px;
         }
 
-        .social-icons a {
+        .social-icons a i {
             display: inline-block;
             margin: 0 10px;
             color: #fff;
@@ -97,8 +98,18 @@
             transition: color 0.3s ease;
         }
 
-        .social-icons a:hover {
+        .social-icons a i:hover {
             color: #55acee;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .footer {
+                padding: 10px;
+            }
+
+            .social-icons {
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
@@ -136,19 +147,22 @@
                 butikk; vi er din partner på veien til et smartere og mer tilkoblet liv.
             </p>
         </div>
-        <a href="produkter.php" class="cta-button">Se på vårt utvalg</a>
+        <a href="produkter.php" class="cart-button">Se på vårt utvalg</a>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="social-icons">
-            <a href="matteriel.php" target="_blank">Facebook</a>
-            <a href="#" target="_blank">Twitter</a>
-            <a href="#" target="_blank">Instagram</a>
-            <!-- Legg til flere sosiale medier etter behov -->
-        </div>
-        <p>&copy; <?php echo date('Y'); ?> Teknotoppen. Alle rettigheter reservert.</p>
-    </footer>
+  <!-- Footer -->
+<footer class="footer">
+    <div class="social-icons">
+        <a href="brukerveiledning.php" target="_blank"><i class="fas fa-book"></i> </a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <!-- Legg til flere sosiale medier etter behov -->
+    </div>
+    <p>&copy; <?php echo date('Y'); ?> Teknotoppen. Alle rettigheter reservert.</p>
+    <p>Kontakt: <a href="mailto:info@teknotoppen.no">info@teknotoppen.no</a></p>
+</footer>
+
 </body>
 
 </html>

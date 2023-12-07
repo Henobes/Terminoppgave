@@ -1,4 +1,3 @@
-<!-- receipt.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,17 +27,35 @@
         }
 
         .kvittering {
-            width: 80%;
-            margin: auto;
+            width: 50%;
+            margin: 50px auto;
             padding: 20px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: white;
         }
 
         #melding {
-            font-size: 1.5em;
+            font-size: 1.2em;
             margin-top: 20px;
+            color: #555;
+        }
+
+        .back-to-home {
+            margin-top: 30px;
+        }
+
+        .back-to-home a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -56,42 +73,54 @@
     <div class="kvittering">
         <h2>Kvittering</h2>
         <p id="melding">Takk for din bestilling! Du vil motta en bekreftelse på e-post.</p>
+        <div class="back-to-home">
+            <a href="index.php">Gå tilbake til startsiden</a>
+        </div>
     </div>
 
     <?php
-    // Koble til databasen
-    session_start();
-    include "database.php";
+// Koble til databasen
+session_start();
+include "database.php";
 
-    // Sjekk tilkobling
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+// Sjekk tilkobling
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-    // Legg til bestilling i databasen
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Hent data fra handlekurven (antatt at det er lagret i localStorage)
-        $cartItems = json_decode($_POST['cartItems'], true);
+// Legg til bestilling i databasen
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Hent data fra handlekurven (antatt at det er lagret i localStorage)
+    $cartItems = json_decode($_POST['cartItems'], true);
 
-        // Her kan du legge til mer logikk for å håndtere bestillingsdataene etter behov
+    // Sett opp SQL-spørringen for å legge til bestilling
+    $customerId = $_POST['idKunde'];
+    $date = date('Y-m-d H:i:s'); // Bruk gjeldende dato og tid
 
-        // Sett opp SQL-spørringen for å legge til bestilling
-        $customerId = $_POST['customerId'];
-        $date = date('Y-m-d H:i:s'); // Bruk gjeldende dato og tid
+    // Loop gjennom elementene i handlekurven og legg til i databasen
+    foreach ($cartItems as $item) {
+        $productId = $item['ProduktID'];  // Juster dette avhengig av strukturen på handlekurvobjektet
+        $quantity = $item['antall'];  // Juster dette avhengig av strukturen på handlekurvobjektet
 
-        $sql = "INSERT INTO bestilling (kundeid, dato) VALUES ('$customerId', '$date')";
+        $sql = "INSERT INTO bestilling (idbestilling, ProduktID idKunde, antall, ) VALUES ('$productId', '$customerId', '$quantity', '$date')";
 
-        if ($conn->query($sql) === TRUE) {
-            // Bestillingen ble lagt til vellykket
-            echo "Bestillingen ble lagt til!";
-        } else {
+        if ($conn->query($sql) !== TRUE) {
             // Feil ved lagring av bestilling
             echo "Feil ved lagring av bestilling: " . $conn->error;
+            break; // Avslutt løkken hvis det oppstår en feil
         }
-
-        // Lukk tilkoblingen
-        $conn->close();
     }
-    ?>
+
+    // Lukk tilkoblingen
+    $conn->close();
+
+    // Gi en tilbakemelding til brukeren etter vellykket bestilling
+    // Dette kan inkluderes i kvitteringsmeldingen eller annen responsmekanisme du foretrekker
+    // echo "Bestillingen ble lagt til vellykket!";
+}
+?>
+
 </body>
 </html>
+
+

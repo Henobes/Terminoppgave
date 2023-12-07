@@ -155,18 +155,55 @@
 
     // Funksjon for bestilling
     function checkout() {
-        // Her kan du legge til logikken for å sende bestillingen eller omdirigere til en kvitteringsside
-        alert('Bestillingen er sendt!');
+        // Hent handlekurvdataene og totalprisen
+        const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
 
-        // Omdirigere til kvitteringssiden
-        window.location.href = 'kvittering.php';
-        
-        // Du kan også tilbakestille handlekurven etter bestillingen hvis det er ønskelig
-        cartItems = [];
-        saveCartToLocalStorage();
-        updateCart();
+        // Legg til 'quantity' og 'productId' for hvert element i handlekurven
+        const checkoutData = cartItems.map(item => ({
+            productId: item.productId, // Bytt ut med riktig nøkkel
+            quantity: 1, // Du kan justere dette basert på din implementasjon
+            price: item.price
+        }));
+
+        // Lag en HTTP-forespørsel (AJAX) for å sende bestillingsdataene til serveren
+        const xhr = new XMLHttpRequest();
+        const url = 'process_order.php'; // Endre dette til filen som vil håndtere bestillinger på serveren
+
+        // Definer dataen som skal sendes til serveren
+        const data = {
+            cartItems: JSON.stringify(checkoutData),
+            // Legg til andre nødvendige data som epost, leveringsadresse, etc.
+        };
+
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        // Lytt til når forespørselen fullføres
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // Bestillingen er sendt, håndter svaret fra serveren om nødvendig
+                alert('Bestillingen er sendt!');
+                // Omdirigere til kvitteringssiden
+                window.location.href = 'kvittering.php';
+                // Tilbakestill handlekurven etter bestilling
+                cartItems = [];
+                saveCartToLocalStorage();
+                updateCart();
+            } else {
+                // Noe gikk galt, vis en feilmelding
+                alert('Feil ved bestilling, prøv igjen senere.');
+            }
+        };
+
+        // Konverter dataen til en streng som sendes som en forespørselsparameter
+        const params = Object.keys(data).map(key => `${key}=${encodeURIComponent(data[key])}`).join('&');
+
+        // Send dataen til serveren
+        xhr.send(params);
     }
 </script>
+
+
 
 
 </body>

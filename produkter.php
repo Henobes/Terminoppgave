@@ -13,7 +13,7 @@
         }
 
         header {
-            background-color: black;
+            background-color: #343a40;
             color: #fff;
             padding: 10px 0;
             text-align: center;
@@ -31,16 +31,18 @@
             margin: auto;
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-around; /* Juster plasseringen av produkter horisontalt */
         }
 
         .product {
             width: calc(22% - 4%);
             margin: 2%;
-            background-color: ;
+            background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 15px;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         .product img {
@@ -67,13 +69,27 @@
             font-size: 14px;
             cursor: pointer;
             border-radius: 4px;
-            margin-top: 10px;
+            margin-top: auto;
+            align-self: center;
         }
 
         .cart-icon {
             font-size: 24px;
         }
+
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .footer p {
+            margin: 0;
+        }
     </style>
+
 </head>
 <body>
     <header>
@@ -81,7 +97,6 @@
         <nav>
             <a href="index.php">Hjem</a>
             <a href="register.php">Loginn/Registrering</a>
-            <a href="login.php">Logg inn</a>
             <a href="kontakt.php">Kontakt</a>
         </nav>
         <a href="handlekurv.php" class="cart-link" onclick="showCart()">
@@ -97,11 +112,10 @@
             <div class="product-info">
                 <h2> JBL hodetelefon</h2>
                 <p>Type: hodetelefon</p>
-                <p>Størrelse: 300 mm</p>
                 <p>levetid: 48 timer</p>
                 <p>Pris: 300kr</p>
             </div>
-            <button class="add-to-cart-btn" onclick="addToCart('JBl hodetelefon', 300)">Legg til handlekurv</button>
+            <button class="add-to-cart-btn" onclick="addToCart('JBl hodetelefon', 300, 'bilder/hode.jpg')">Legg til handlekurv</button>
         </div>
 
         <div class="product">
@@ -109,8 +123,7 @@
             <div class="product-info">
                 <h2>Surface Laptop 5</h2>
                 <p>Type: Microsoft</p>
-                <p>Størrelse: </p>
-                <p>Hastighet: </p>
+                <p>levetid  12 timer: </p>
                 <p>Pris: 13 0000 kr</p>
             </div>
             <button class="add-to-cart-btn" onclick="addToCart('laptop', 13000)">Legg til handlekurv</button>
@@ -165,6 +178,30 @@
             </div>
             <button class="add-to-cart-btn" onclick="addToCart('Samsung Galaxy s22', 8400)">Legg til handlekurv</button>
         </div>
+
+        <div class="product">
+            <img src="bilder/logitech.jpg" alt="laptop">
+            <div class="product-info">
+                <h2>Logitech gaming headsett</h2>
+                <p>Type: G433</p>
+                <p> lagring: 256 gb</p>
+                <p>levetid:20 timer </p>
+                <p>Pris: 1300 kr</p>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart('Samsung Galaxy s22', 8400)">Legg til handlekurv</button>
+        </div>
+
+        <div class="product">
+            <img src="bilder/ps5.jpg" alt="laptop">
+            <div class="product-info">
+                <h2>Playstation 5</h2>
+                <p>Type: Standard editon</p>
+                <p> lagring: 256 gb</p>
+                <p>levetid:20 timer </p>
+                <p>Pris: 6800 kr</p>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart('Ps5', 6800)">Legg til handlekurv</button>
+        </div>
         <!-- Legg til flere produkter her... -->
 
     </div>
@@ -202,5 +239,15 @@
             alert(`${productName} er lagt til i handlekurven!`);
         }
     </script>
+    <footer class="footer">
+    <div class="social-icons">
+        <a href="brukerveiledning.php" target="_blank">Brukerveiledning</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">Instagram</a>
+        <!-- Legg til flere sosiale medier etter behov -->
+    </div>
+    <p>&copy; <?php echo date('Y'); ?> Teknotoppen. Alle rettigheter reservert.</p>
+    <p>Kontakt: <a href="mailto:info@teknotoppen.no">info@teknotoppen.no</a></p>
+</footer>
 </body>
 </html>

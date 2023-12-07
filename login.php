@@ -56,69 +56,62 @@
             </section>
             <!-- PHP-kode for innlogging -->
             <?php
-session_start();
-include "database.php";
+            session_start();
+            include "database.php";
 
-if (isset($_POST['brukernavn']) && isset($_POST['passord'])) {
+            if (isset($_POST['brukernavn']) && isset($_POST['passord'])) {
 
-    function validate($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    $brukernavn = validate($_POST['brukernavn']);
-    $passord = validate($_POST['passord']);
-
-    if (empty($brukernavn) || empty($passord)) {
-        echo "Begge feltene må fylles ut.";
-        exit();
-    }
-
-    $sql = "SELECT * FROM kunde WHERE brukernavn='$brukernavn'";
-    $result = mysqli_query($conn, $sql);
-
-    if ($result) {
-        if (mysqli_num_rows($result) === 1) {
-            $row = mysqli_fetch_assoc($result);
-            if (password_verify($passord, $row['passord'])) {
-                $_SESSION['brukernavn'] = $row['brukernavn'];
-                $_SESSION['idkunde'] = $row['idKunde'];
-
-                // Velkomstmelding
-                // ...
-
-                // Omdirigering etter vellykket innlogging
-                $redirect_path = "/path/til/din/nettsted/produkter.php";
-                if (header("Location: $redirect_path")) {
-                    exit();
-                } else {
-                    echo "Feil ved omdirigering.";
+                function validate($data)
+                {
+                    $data = trim($data);
+                    $data = stripslashes($data);
+                    $data = htmlspecialchars($data);
+                    return $data;
                 }
+
+                $brukernavn = validate($_POST['brukernavn']);
+                $passord = validate($_POST['passord']);
+
+                if (empty($brukernavn) || empty($passord)) {
+                    echo "Begge feltene må fylles ut.";
+                    exit();
+                }
+
+                $sql = "SELECT * FROM kunde WHERE brukernavn='$brukernavn'";
+                $result = mysqli_query($conn, $sql);
+
+                if ($result) {
+                    if (mysqli_num_rows($result) === 1) {
+                        $row = mysqli_fetch_assoc($result);
+                        if (password_verify($passord, $row['passord'])) {
+                            $_SESSION['brukernavn'] = $row['brukernavn'];
+                            $_SESSION['idkunde'] = $row['idKunde'];
+
+                            // Velkomstmelding
+                           
+
+                            // Omdirigering etter vellykket innlogging
+                            header("Location: produkter.php.");
+                            exit();
+                        } else {
+                            echo "Feil passord.";
+                        }
+                    } else {
+                        echo "Ingen bruker funnet med dette brukernavnet.";
+                    }
+                } else {
+                    echo "Feil med spørring: " . mysqli_error($conn);
+                }
+
+                // Lukk resultatsettet
+                mysqli_free_result($result);
+                // Lukk databasetilkoblingen
+                mysqli_close($conn);
             } else {
-                echo "Feil passord.";
+                echo "Mangler nødvendige data.";
+                exit();
             }
-        } else {
-            echo "Ingen bruker funnet med dette brukernavnet.";
-        }
-    } else {
-        echo "Feil med spørring: " . mysqli_error($conn);
-    }
-
-    // Lukk resultatsettet
-    mysqli_free_result($result);
-    // Lukk databasetilkoblingen
-    mysqli_close($conn);
-} else {
-    echo "Mangler nødvendige data.";
-    exit();
-}
-?>
-
-
-
+            ?>
         </div>
 
         <!-- Footer-seksjon -->
