@@ -1,103 +1,118 @@
-/* Reset some default styles */
+/* Nullstill noen standardstiler for elementer */
 body, h1, h2, h3, p, ul, li, form {
     margin: 0;
     padding: 0;
 }
 
+/* Stiler for hele nettsiden */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: Arial, sans-serif; /* Bruk Arial-skrifttypen og fall-back til sans-serif hvis Arial ikke er tilgjengelig */
+    background-color: #f4f4f4; /* Sett bakgrunnsfargen til lys grå */
+    color: #333; /* Sett tekstfargen til mørk grå */
 }
 
+/* Stiler for hovedcontaineren */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    max-width: 800px; /* Begrens bredden til 800 piksler */
+    margin: 0 auto; /* Sentrer containeren horisontalt */
+    background-color: #fff; /* Sett bakgrunnsfargen til hvit */
+    border-radius: 5px; /* Runde hjørner med en radius på 5 piksler */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Legg til en lett skyggeeffekt */
+    overflow: hidden; /* Skjul eventuelt overløpende innhold */
 }
 
+/* Stiler for header-seksjonen */
 header {
-    background-color: #2c3e50;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+    background-color: #2c3e50; /* Sett bakgrunnsfargen til mørk blå-grå */
+    color: #fff; /* Tekstfargen er hvit */
+    text-align: center; /* Senterjuster teksten */
+    padding: 20px; /* Legg til polstring rundt innholdet i header-seksjonen */
 }
 
+/* Stiler for logoen i header */
 .logo img {
-    max-width: 100px;
-    height: auto;
+    max-width: 100px; /* Begrens maksimal bredde til 100 piksler */
+    height: auto; /* Bevar bildeaspektforholdet for høyde */
 }
 
+/* Stiler for navigasjonsmenyen */
 nav ul {
-    list-style: none;
-    text-align: center;
-    background-color: #2c3e50;
-    padding: 10px;
+    list-style: none; /* Fjern punktmarkering for listen */
+    text-align: center; /* Senterjuster teksten */
+    background-color: #2c3e50; /* Sett bakgrunnsfargen til mørk blå-grå */
+    padding: 10px; /* Legg til polstring rundt navigasjonsmenyen */
 }
 
+/* Stiler for hvert element i navigasjonsmenyen */
 nav ul li {
-    display: inline-block;
-    margin-right: 20px;
+    display: inline-block; /* Vis elementene ved siden av hverandre */
+    margin-right: 20px; /* Legg til høyremargen mellom elementene */
 }
 
+/* Stiler for lenkene i navigasjonsmenyen */
 nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
+    text-decoration: none; /* Fjern understrekning under lenkene */
+    color: #fff; /* Tekstfargen er hvit */
+    font-weight: bold; /* Sett fet skrift */
+    font-size: 16px; /* Sett skriftstørrelsen til 16 piksler */
 }
 
+/* Stiler for hovedinnholdet */
 .main-content {
-    padding: 20px;
+    padding: 20px; /* Legg til polstring rundt hovedinnholdet */
 }
 
+/* Stiler for innloggingseksjonen */
 .login-section {
-    text-align: center;
+    text-align: center; /* Senterjuster teksten */
 }
 
+/* Stiler for skjema-gruppene */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Legg til bunnmargen for skjema-gruppene */
 }
 
+/* Stiler for etiketter i skjemaet */
 label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+    display: block; /* Vis etikettene som blokk-elementer */
+    font-weight: bold; /* Sett fet skrift for etikettene */
+    margin-bottom: 5px; /* Legg til bunnmargen for etikettene */
 }
 
+/* Stiler for inntastingsfelt i skjemaet */
 input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    width: 100%; /* Fyll bredden av overordnet container */
+    padding: 10px; /* Legg til polstring rundt inntastingsfeltene */
+    border: 1px solid #ccc; /* Legg til en grense med lys grå farge */
+    border-radius: 3px; /* Runde hjørner med en radius på 3 piksler */
 }
 
+/* Stiler for knappen i skjemaet */
 button {
-    padding: 10px;
-    background-color: #2ecc71;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+    padding: 10px; /* Legg til polstring rundt knappen */
+    background-color: #2ecc71; /* Sett bakgrunnsfargen til grønn */
+    color: #fff; /* Tekstfargen er hvit */
+    border: none; /* Fjern grensen */
+    border-radius: 3px; /* Runde hjørner med en radius på 3 piksler */
+    cursor: pointer; /* Endre musepekeren til en hånd når den svever over knappen */
 }
 
+/* Stiler for knappen ved hover (når musen svever over) */
 button:hover {
-    background-color: #27ae60;
+    background-color: #27ae60; /* Endre bakgrunnsfargen til en mørkere grønn */
 }
 
+/* Stiler for registreringsseksjonen */
 .register-section {
-    margin-top: 10px;
-    font-size: 14px;
-    
+    margin-top: 10px; /* Legg til toppmargen for registreringsseksjonen */
+    font-size: 14px; /* Sett skriftstørrelsen til 14 piksler */
 }
 
+/* Stiler for bunnteksten */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #3498db;
-    color: #fff;
-    border-radius: 0 0 5px 5px;
+    text-align: center; /* Senterjuster teksten */
+    padding: 10px; /* Legg til polstring rundt bunnteksten */
+    background-color: #3498db; /* Sett bakgrunnsfargen til lys blå */
+    color: #fff; /* Tekstfargen er hvit */
+    border-radius: 0 0 5px 5px; /* Runde hjørner i bunnkant av footer */
 }

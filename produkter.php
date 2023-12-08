@@ -5,90 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produkter - Bare Vifter</title>
     <style>
-        body {
-            font-family: 'Dubai Medium', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: white;
-        }
+    /* Generelle stiler for hele nettsiden */
+    body {
+        font-family: 'Dubai Medium', sans-serif; /* Bruker Dubai Medium som skrifttype */
+        margin: 0; /* Nullstiller marginen for å unngå unødvendig mellomrom */
+        padding: 0; /* Nullstiller padding for å unngå unødvendig polstring */
+        background-color: white; /* Setter bakgrunnsfargen til hvit */
+    }
 
-        header {
-            background-color: #343a40;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
+    /* Stiler for header-seksjonen øverst på siden */
+    header {
+        background-color: #343a40; /* Bakgrunnsfarge for header-seksjonen */
+        color: #fff; /* Tekstfargen i header-seksjonen er hvit */
+        padding: 10px 0; /* Polstring over og under innholdet i header-seksjonen */
+        text-align: center; /* Senterjusterer tekst i header */
+    }
 
-        header a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+    /* Stiler for lenker i header-seksjonen */
+    header a {
+        color: #fff; /* Farge for lenkene i header er hvit */
+        text-decoration: none; /* Fjerner understrekning under lenkene */
+        margin: 0 15px; /* Legger til mellomrom mellom lenkene */
+        font-weight: bold; /* Setter fet skrift for lenkene */
+    }
 
-        .container {
-            width: 80%;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around; /* Juster plasseringen av produkter horisontalt */
-        }
+    /* Stiler for hovedcontaineren som inneholder produktene */
+    .container {
+        width: 80%; /* Setter bredden til 80% av visningsvinduet */
+        margin: auto; /* Sentrerer containeren horisontalt */
+        display: flex; /* Bruker flex-boks modellen for plassering av produktene */
+        flex-wrap: wrap; /* Tillater at produkter går over til neste rad ved plassmangel */
+        justify-content: space-around; /* Justerer plasseringen av produkter horisontalt */
+    }
 
-        .product {
-            width: calc(22% - 4%);
-            margin: 2%;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
+    /* Stiler for hvert produkt */
+    .product {
+        width: calc(22% - 4%); /* Beregner bredden for hvert produkt med avstand */
+        margin: 2%; /* Legger til mellomrom mellom produktene */
+        background-color: #fff; /* Bakgrunnsfarge for hvert produkt er hvit */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Legger til en lett skyggeeffekt */
+        padding: 15px; /* Legger til polstring rundt produktet */
+        display: flex; /* Bruker flex-boks modellen for plassering av elementene i produktet */
+        flex-direction: column; /* Stapler elementene vertikalt i produktet */
+        position: relative; /* Setter produktet i relativ posisjon for å tillate absolutt plassering */
+    }
 
-        .product img {
-            width: 100%;
-            height: auto;
-        }
+    /* Stiler for bilder i hvert produkt */
+    .product img {
+        width: 100%; /* Bildet fyller hele bredden av foreldrecontaineren */
+        height: auto; /* Beholder proporsjonene for bildet */
+    }
 
-        .product-info {
-            padding: 15px;
-        }
+    /* Stiler for produktinformasjonen */
+    .product-info {
+        padding: 15px; /* Legger til polstring rundt produktinformasjonen */
+    }
 
-        .product-info h2 {
-            margin-top: 0;
-        }
+    /* Stiler for overskriftsnivå 2 (h2) i produktinformasjonen */
+    .product-info h2 {
+        margin-top: 0; /* Nullstiller toppmargen for å unngå unødvendig mellomrom */
+    }
 
-        .add-to-cart-btn {
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            padding: 8px 12px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-top: auto;
-            align-self: center;
-        }
+    /* Stiler for knappen for å legge til i handlekurven */
+    .add-to-cart-btn {
+        background-color: #4CAF50; /* Bakgrunnsfarge for knappen er grønn */
+        color: #fff; /* Tekstfargen for knappen er hvit */
+        border: none; /* Fjerner grensen rundt knappen */
+        padding: 8px 12px; /* Legger til polstring rundt teksten i knappen */
+        text-align: center; /* Senterjusterer teksten i knappen */
+        text-decoration: none; /* Fjerner understrekning under teksten */
+        display: inline-block; /* Viser knappen som et inline-blokk-element */
+        font-size: 14px; /* Setter skriftstørrelsen for teksten i knappen */
+        cursor: pointer; /* Gir musepekeren en håndpeker når den svever over knappen */
+        border-radius: 4px; /* Legger til avrundede hjørner for knappen */
+        margin-top: auto; /* Plasserer knappen nederst i produktet */
+        align-self: center; /* Senterjusterer knappen innenfor produktet */
+    }
 
-        .cart-icon {
-            font-size: 24px;
-        }
+    /* Stiler for handlekurvikonet */
+    .cart-icon {
+        font-size: 24px; /* Setter skriftstørrelsen for handlekurvikonet */
+    }
 
-        .footer {
-            background-color: #343a40;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            margin-top: 30px;
-        }
+    /* Stiler for bunntekstseksjonen (footer) */
+    .footer {
+        background-color: #343a40; /* Bakgrunnsfarge for bunntekstseksjonen */
+        color: #fff; /* Tekstfarge for bunntekstseksjonen er hvit */
+        padding: 20px; /* Legger til polstring rundt innholdet i bunntekstseksjonen */
+        text-align: center; /* Senterjusterer tekst i bunntekstseksjonen */
+        margin-top: 30px; /* Legger til mellomrom over bunntekstseksjonen */
+    }
 
-        .footer p {
-            margin: 0;
-        }
-    </style>
+    /* Stiler for avsnitt i bunntekstseksjonen */
+    .footer p {
+        margin: 0; /* Nullstiller margen for å unngå unødvendig mellomrom */
+    }
+</style>
+
 
 </head>
 <body>
@@ -106,7 +119,7 @@
     </header>
 
     <div class="container">
-        <!-- Produktseksjoner med bilde, informasjon og legg til handlekurv-knapp -->
+        <!-- Produktene til nettside med bilde og informasjon om produktet -->
         <div class="product">
             <img src="bilder/hode.jpg" alt="iphone 15">
             <div class="product-info">
@@ -148,7 +161,6 @@
             <div class="product-info">
                 <h2>Airpods (3gen)</h2>
                 <p>Type: Apple</p>
-                <p> </p>
                 <p>levetid:20 timer </p>
                 <p>Pris: 2000 kr</p>
             </div>

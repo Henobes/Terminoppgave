@@ -7,111 +7,117 @@
     <title>Teknotoppen</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
-        body {
-            font-family: 'Dubai Medium', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #495057;
-        }
+    /* Generelle stiler for hele nettsiden */
+    body {
+        font-family: 'Dubai Medium', sans-serif; /* Bruker Dubai Medium som skrifttype */
+        margin: 0; /* Nullstiller marginen for å unngå unødvendig mellomrom */
+        padding: 0; /* Nullstiller padding for å unngå unødvendig polstring */
+        background-color: #f8f9fa; /* Setter bakgrunnsfargen til lys grå */
+        color: #495057; /* Setter tekstfargen til mørk grå */
+    }
 
-        header {
-            background-color: #343a40;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    /* Stiler for header-seksjonen øverst på siden */
+    header {
+        background-color: #343a40; /* Bakgrunnsfarge for header-seksjonen */
+        color: #fff; /* Tekstfargen i header-seksjonen er hvit */
+        padding: 10px; /* Polstring rundt innholdet i header-seksjonen */
+        text-align: center; /* Senterjusterer tekst i header */
+        display: flex; /* Bruker flex-boks modellen for plassering av elementene i header */
+        align-items: center; /* Sentrerer vertikalt innholdet i header */
+        justify-content: space-between; /* Plasserer elementer jevnt mellomrom i header */
+    }
 
-        header a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+    /* Stiler for lenker i header-seksjonen */
+    header a {
+        color: #fff; /* Farge for lenkene i header er hvit */
+        text-decoration: none; /* Fjerner understrekning under lenkene */
+        margin: 0 15px; /* Legger til mellomrom mellom lenkene */
+        font-weight: bold; /* Setter fet skrift for lenkene */
+    }
 
-        .logo img {
-            max-width: 80px;
-            max-height: 80px;
-        }
+    /* Stiler for logo-bildet i header-seksjonen */
+    .logo img {
+        max-width: 80px; /* Setter maks bredde for logo-bildet */
+        max-height: 80px; /* Setter maks høyde for logo-bildet */
+    }
 
-        .tekst {
-            width: 90%;
-            margin: auto;
-            padding: 20px;
-            text-align: justify;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin-top: 20px;
-        }
+    /* Stiler for hovedtekstboksen */
+    .tekst {
+        width: 90%; /* Setter bredden til 90% av foreldrecontaineren */
+        margin: auto; /* Sentrerer teksten horisontalt ved hjelp av automatisk margin */
+        padding: 20px; /* Legger til polstring rundt innholdet i tekstboksen */
+        text-align: justify; /* Justerer tekst til venstre og høyre i tekstboksen */
+        background-color: #fff; /* Bakgrunnsfargen for tekstboksen er hvit */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Legger til en lett skyggeeffekt */
+        border-radius: 10px; /* Legger til avrundede hjørner */
+        margin-top: 20px; /* Legger til mellomrom over tekstboksen */
+    }
 
-        h2 {
-            color: #343a40;
-        }
+    /* Stiler for overskriftsnivå 2 (h2) */
+    h2 {
+        color: #343a40; /* Farge for overskriftsnivå 2 er mørk grå */
+    }
 
-        .main-content {
-            padding: 20px;
-        }
+    /* Stiler for hovedinnholdet */
+    .main-content {
+        padding: 20px; /* Legger til polstring rundt hovedinnholdet */
+    }
 
-        .cart-button {
-            display: block;
-            background-color: #343a40;
-            color: #fff;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px auto;
-            text-align: center;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-        }
+    /* Stiler for handlekurvknappen */
+    .cart-button {
+        display: block; /* Viser handlekurvknappen som et blokk-element */
+        background-color: #343a40; /* Bakgrunnsfarge for handlekurvknappen */
+        color: #fff; /* Tekstfarge for handlekurvknappen er hvit */
+        text-decoration: none; /* Fjerner understrekning under teksten */
+        padding: 15px; /* Legger til polstring rundt teksten i handlekurvknappen */
+        border-radius: 5px; /* Legger til avrundede hjørner */
+        margin: 20px auto; /* Sentrerer handlekurvknappen og legger til mellomrom */
+        text-align: center; /* Senterjusterer teksten i handlekurvknappen */
+        font-size: 18px; /* Setter skriftstørrelsen for teksten i handlekurvknappen */
+        transition: background-color 0.3s ease; /* Legger til en overgangseffekt på bakgrunnsfargen */
+    }
 
-        .cart-button:hover {
-            background-color: #495057;
-        }
+    /* Endrer bakgrunnsfargen når musepekeren svever over handlekurvknappen */
+    .cart-button:hover {
+        background-color: #495057; /* Ny bakgrunnsfarge ved hover-effekt */
+    }
 
-        .footer {
-            background-color: #343a40;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            margin-top: 30px;
-        }
+    /* Stiler for bunntekstseksjonen (footer) */
+    .footer {
+        background-color: #343a40; /* Bakgrunnsfarge for bunntekstseksjonen */
+        color: #fff; /* Tekstfarge for bunntekstseksjonen er hvit */
+        padding: 20px; /* Legger til polstring rundt innholdet i bunntekstseksjonen */
+        text-align: center; /* Senterjusterer tekst i bunntekstseksjonen */
+        margin-top: 30px; /* Legger til mellomrom over bunntekstseksjonen */
+    }
 
-        .footer p {
-            margin: 0;
-        }
+    /* Stiler for avsnitt i bunntekstseksjonen */
+    .footer p {
+        margin: 0; /* Nullstiller margen for å unngå unødvendig mellomrom */
+    }
 
-        .social-icons {
-            margin-top: 20px;
-        }
+    /* Stiler for sosiale medieikoner */
+    .social-icons {
+        margin-top: 20px; /* Legger til mellomrom over sosiale medieikonene */
+    }
 
-        .social-icons a i {
-            display: inline-block;
-            margin: 0 10px;
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+    /* Stiler for lenker til sosiale medieikoner */
+    .social-icons a i {
+        display: inline-block; /* Viser sosiale medieikoner som blokk-elementer */
+        margin: 0 10px; /* Legger til mellomrom mellom sosiale medieikoner */
+        color: #fff; /* Farge for sosiale medieikoner er hvit */
+        font-size: 24px; /* Setter skriftstørrelsen for sosiale medieikoner */
+        text-decoration: none; /* Fjerner understrekning under sosiale medieikoner */
+        transition: color 0.3s ease; /* Legger til en overgangseffekt på fargeendring */
+    }
 
-        .social-icons a i:hover {
-            color: #55acee;
-        }
+    /* Endrer fargen når musepekeren svever over sosiale medieikoner */
+    .social-icons a i:hover {
+        color: #55acee; /* Ny farge ved hover-effekt */
+    }
 
-        @media only screen and (max-width: 600px) {
-            .footer {
-                padding: 10px;
-            }
+   </style>
 
-            .social-icons {
-                margin-top: 10px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -121,7 +127,8 @@
         </div>
         <h1>Teknotoppen</h1>
         <nav>
-            <a href="login.php">Logg inn/Registrering</a>
+            <!-- meny og handlekurv --> 
+                       <a href="login.php">Logg inn/Registrering</a>
             <a href="produkter.php">Produkter</a>
             <a href="kontakt.php">Kontakt</a>
         </nav>

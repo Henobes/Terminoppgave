@@ -5,59 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kvittering - Teknotoppen</title>
     <style>
-        body {
-            font-family: 'Dubai Medium', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-            text-align: center;
-        }
+    /* Generelle stiler for hele nettsiden */
+    body {
+        font-family: 'Dubai Medium', sans-serif; /* Bruker Dubai Medium eller en generisk sans-serif skrifttype */
+        margin: 0; /* Nullstiller marginen for å unngå unødvendig mellomrom */
+        padding: 0; /* Nullstiller padding for å unngå unødvendig polstring */
+        background-color: #f2f2f2; /* Setter bakgrunnsfargen til lys grå */
+        text-align: center; /* Senterjusterer tekst innenfor body-elementet */
+    }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-        }
+    /* Stiler for header-seksjonen øverst på siden */
+    header {
+        background-color: #333; /* Bakgrunnsfarge for header-seksjonen er mørk grå */
+        color: #fff; /* Tekstfargen i header-seksjonen er hvit */
+        padding: 10px 0; /* Polstring over og under innholdet i header-seksjonen */
+    }
 
-        header a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+    /* Stiler for lenker i header-seksjonen */
+    header a {
+        color: #fff; /* Farge for lenkene i header er hvit */
+        text-decoration: none; /* Fjerner understrekning under lenkene */
+        margin: 0 15px; /* Legger til mellomrom mellom lenkene */
+        font-weight: bold; /* Setter fet skrift for lenkene */
+    }
 
-        .kvittering {
-            width: 50%;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
+    /* Stiler for kvitteringsseksjonen */
+    .kvittering {
+        width: 50%; /* Setter bredden til 50% av visningsvinduet */
+        margin: 50px auto; /* Sentrerer kvitteringsseksjonen vertikalt og horisontalt */
+        padding: 20px; /* Legger til polstring rundt innholdet i kvitteringsseksjonen */
+        background-color: #fff; /* Bakgrunnsfarge for kvitteringsseksjonen er hvit */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Legger til en lett skyggeeffekt */
+        border-radius: 10px; /* Legger til avrundede hjørner for kvitteringsseksjonen */
+    }
 
-        h1 {
-            color: white;
-        }
+    h1 {
+        color: white; /* Tekstfargen for overskriftsnivå 1 (h1) er hvit */
+    }
 
-        #melding {
-            font-size: 1.2em;
-            margin-top: 20px;
-            color: #555;
-        }
+    #melding {
+        font-size: 1.2em; /* Setter skriftstørrelsen for meldingen til 1.2em */
+        margin-top: 20px; /* Legger til toppmargen for meldingen */
+        color: #555; /* Farge for meldingen er mørk grå */
+    }
 
-        .back-to-home {
-            margin-top: 30px;
-        }
+    /* Stiler for "Tilbake til hjem" lenken */
+    .back-to-home {
+        margin-top: 30px; /* Legger til toppmargen for lenken */
+    }
 
-        .back-to-home a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-    </style>
+    .back-to-home a {
+        display: inline-block; /* Viser lenken som et inline-blokk-element */
+        padding: 10px 20px; /* Legger til polstring rundt teksten i lenken */
+        background-color: #333; /* Bakgrunnsfarge for lenken er mørk grå */
+        color: #fff; /* Tekstfargen for lenken er hvit */
+        text-decoration: none; /* Fjerner understrekning under lenken */
+        border-radius: 5px; /* Legger til avrundede hjørner for lenken */
+    }
+</style>
+
 </head>
 <body>
     <header>
@@ -71,6 +77,7 @@
     </header>
 
     <div class="kvittering">
+        <!-- melding om bekreftelse av bestilling og knapp til bake till hjemsiden -->
         <h2>Kvittering</h2>
         <p id="melding">Takk for din bestilling! Du vil motta en bekreftelse på e-post.</p>
         <div class="back-to-home">

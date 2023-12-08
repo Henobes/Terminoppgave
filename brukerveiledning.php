@@ -6,48 +6,57 @@
     <title>Brukerveiledning og IT-læring</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+    /* Generelle stiler for hele nettsiden */
+    body {
+        font-family: Arial, sans-serif; /* Bruker Arial eller en generisk sans-serif skrifttype */
+        margin: 0; /* Nullstiller marginen for å unngå unødvendig mellomrom */
+        padding: 0; /* Nullstiller padding for å unngå unødvendig polstring */
+    }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
+    /* Stiler for header-seksjonen øverst på siden */
+    header {
+        background-color: #333; /* Bakgrunnsfarge for header-seksjonen er mørk grå */
+        color: #fff; /* Tekstfargen i header-seksjonen er hvit */
+        padding: 10px; /* Polstring rundt innholdet i header-seksjonen */
+        text-align: center; /* Senterjusterer tekst i header */
+    }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
+    /* Stiler for navigasjonsmenyen */
+    nav ul {
+        list-style-type: none; /* Fjerner punkter for listeelementene i navigasjonsmenyen */
+        margin: 0; /* Nullstiller marginen for å unngå unødvendig mellomrom */
+        padding: 0; /* Nullstiller padding for å unngå unødvendig polstring */
+    }
 
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
-        }
+    /* Stiler for hvert element i navigasjonsmenyen */
+    nav ul li {
+        display: inline; /* Viser listeelementene horisontalt ved siden av hverandre */
+        margin-right: 10px; /* Legger til mellomrom mellom listeelementene */
+    }
 
-        nav a {
-            text-decoration: none;
-            color: #fff;
-        }
+    /* Stiler for lenker i navigasjonsmenyen */
+    nav a {
+        text-decoration: none; /* Fjerner understrekning under lenkene */
+        color: #fff; /* Farge for lenkene er hvit */
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    /* Stiler for lenker når musepekeren svever over dem */
+    a:hover {
+        text-decoration: underline; /* Legger til understrekning under lenkene ved hover */
+    }
 
-        section {
-            margin: 20px;
-        }
+    /* Stiler for hovedseksjonen */
+    section {
+        margin: 20px; /* Legger til mellomrom rundt innholdet i hovedseksjonen */
+    }
 
-        iframe {
-            width: 100%;
-            height: 600px;
-        }
-    </style>
+    /* Stiler for iframe-elementet */
+    iframe {
+        width: 100%; /* Setter bredden til 100% av foreldrecontaineren */
+        height: 600px; /* Setter fast høyde for iframe-elementet */
+    }
+</style>
+
 </head>
 <body>
 
@@ -65,17 +74,16 @@
 
 <section id="brukerveiledning">
     <h2>Brukerveiledning</h2>
-    <!-- Legg til brukerveiledningens innhold her -->
+    <!-- brukerveiledning for sluttbruker, iframe for pdf på nettsiden -->
     <iframe src="bilder/BrukerveiledningBruker.pdf" width="100%" height="600px"></iframe>
 </section>
 
 <section id="it-laering">
     <h2>IT-læring</h2>
-    <!-- Legg til IT-læringens innhold her -->
+    <!-- brukerveiledning for it læling iframe for pdf på nettsiden -->
     <iframe src="bilder/ITbrukerveiledning.pdf" width="100%" height="600px"></iframe>
 </section>
 
-<!-- Annen innhold av nettsiden -->
 
 </body>
 </html>

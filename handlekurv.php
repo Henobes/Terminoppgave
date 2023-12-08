@@ -5,56 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>123</title>
     <style>
-        body {
-            font-family: 'Dubai Medium';
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
+    /* Generelle stiler for hele nettsiden */
+    body {
+        font-family: 'Dubai Medium'; /* Bruker Dubai Medium-skrifttypen */
+        margin: 0; /* Nullstiller marginen for å unngå unødvendig mellomrom */
+        padding: 0; /* Nullstiller padding for å unngå unødvendig polstring */
+        background-color: #f2f2f2; /* Setter bakgrunnsfargen til lys grå */
+    }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
+    /* Stiler for header-seksjonen øverst på siden */
+    header {
+        background-color: #333; /* Bakgrunnsfarge for header-seksjonen er mørk grå */
+        color: #fff; /* Tekstfargen i header-seksjonen er hvit */
+        padding: 10px 0; /* Polstring over og under innholdet i header-seksjonen */
+        text-align: center; /* Senterjusterer tekst i header */
+    }
 
-        header a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+    /* Stiler for lenker i header-seksjonen */
+    header a {
+        color: #fff; /* Farge for lenkene i header er hvit */
+        text-decoration: none; /* Fjerner understrekning under lenkene */
+        margin: 0 15px; /* Legger til mellomrom mellom lenkene */
+        font-weight: bold; /* Setter fet skrift for lenkene */
+    }
 
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
+    /* Stiler for hovedcontaineren som omgir innholdet */
+    .container {
+        width: 80%; /* Setter bredden til 80% av visningsvinduet */
+        margin: auto; /* Sentrerer containeren horisontalt på siden */
+        padding: 20px; /* Legger til polstring rundt innholdet i containeren */
+        background-color: #fff; /* Bakgrunnsfarge for containeren er hvit */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Legger til en lett skyggeeffekt */
+        margin-top: 20px; /* Legger til toppmargen for containeren */
+    }
 
-        .cart-item {
-            margin-bottom: 10px;
-        }
+    /* Stiler for hvert element med klassen 'cart-item' */
+    .cart-item {
+        margin-bottom: 10px; /* Legger til bunnmargen for hvert handlekurvselement */
+    }
 
-        #totalPrice {
-            font-weight: bold;
-            margin-top: 10px;
-        }
+    /* Stiler for elementet med id 'totalPrice' */
+    #totalPrice {
+        font-weight: bold; /* Setter fet skrift for totalprisen */
+        margin-top: 10px; /* Legger til toppmargen for totalprisen */
+    }
 
-        #checkoutBtn {
-            display: block;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    /* Stiler for elementet med id 'checkoutBtn' */
+    #checkoutBtn {
+        display: block; /* Viser knappen som et blokk-element */
+        margin-top: 20px; /* Legger til toppmargen for knappen */
+        padding: 10px; /* Legger til polstring rundt teksten i knappen */
+        background-color: #4CAF50; /* Bakgrunnsfarge for knappen er grønn */
+        color: #fff; /* Tekstfargen for knappen er hvit */
+        text-align: center; /* Senterjusterer teksten i knappen */
+        text-decoration: none; /* Fjerner understrekning under teksten i knappen */
+        cursor: pointer; /* Endrer musepekeren til en hånd når den svever over knappen */
+    }
+</style>
+
 </head>
 <body>
     <header>
@@ -68,6 +76,7 @@
     </header>
 
     <div class="container">
+        <!-- bestill nå knapp og handlekurv-->
         <h2>Handlekurv</h2>
         <div id="cartItems" class="cart-item"></div>
         <div id="totalPrice">Totalpris: 0 kr</div>

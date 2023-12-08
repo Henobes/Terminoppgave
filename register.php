@@ -7,46 +7,65 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
+   <!-- Hovedcontaineren som inneholder hele innholdet -->
+<div class="container">
+
+<!-- Header-seksjonen med logo og nettstedets navn -->
+<header>
+    <div class="logo">
+        <!-- Legg til logo her -->
+    </div>
+    <h1> Teknotoppen</h1> <!-- Overskrift for nettstedets navn -->
+</header>
+
+<!-- Navigasjonsmenyen -->
+<nav>
+    <ul>
+        <li><a href="index.php">Hjem</a></li> <!-- Lenke til hjem-siden -->
+        <li><a href="produkter.php">Produkter</a></li> <!-- Lenke til produkter-siden -->
+        <li><a href="kontakt.php">Kontakt</a></li> <!-- Lenke til kontakt-siden -->
+    </ul>
+</nav>
+
+<!-- Hovedinnholdsseksjonen -->
+<div class="main-content">
+
+    <!-- Seksjon for registrering -->
+    <section class="register-section">
+        <h2>Registrer deg</h2> <!-- Overskrift for registreringsskjemaet -->
+
+        <!-- Skjema for registrering med handling mot register.php -->
+        <form action="register.php" method="post">
+
+            <!-- Brukernavn-inputfelt -->
+            <div class="form-group">
+                <label for="brukernavn">Brukernavn:</label>
+                <input type="text" id="brukernavn" name="brukernavn" placeholder="Velg et brukernavn" required>
             </div>
-            <h1> Teknotoppen</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="index.php">Hjem</a></li>
-                <li><a href="produkter.php">Produkter</a></li>
-                <li><a href="kontakt.php">Kontakt</a></li>
-            </ul>
-        </nav>
-        <div class="main-content">
-            <section class="register-section">
-                <h2>Registrer deg</h2>
-                <form action="register.php" method="post">
-                    <div class="form-group">
-                        <label for="brukernavn">Brukernavn:</label>
-                        <input type="text" id="brukernavn" name="brukernavn" placeholder="Velg et brukernavn" required>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="epost">E-post:</label>
-                        <input type="email" id="epost" name="epost" placeholder="Din e-postadresse" required>
-                    </div>
+            <!-- E-post-inputfelt -->
+            <div class="form-group">
+                <label for="epost">E-post:</label>
+                <input type="email" id="epost" name="epost" placeholder="Din e-postadresse" required>
+            </div>
 
-                    <div class="form-group">
-                        <label for="passord">Passord:</label>
-                        <input type="password" id="passord" name="passord" placeholder="Velg et passord" required>
-                    </div>
+            <!-- Passord-inputfelt -->
+            <div class="form-group">
+                <label for="passord">Passord:</label>
+                <input type="password" id="passord" name="passord" placeholder="Velg et passord" required>
+            </div>
 
-                    <div class="form-group">
-                        <label for="leveringsadresse">Leveringsadresse:</label>
-                        <textarea id="leveringsadresse" name="leveringsadresse" placeholder="Din leveringsadresse" required></textarea>
-                    </div>
+            <!-- Leveringsadresse-inputfelt -->
+            <div class="form-group">
+                <label for="leveringsadresse">Leveringsadresse:</label>
+                <textarea id="leveringsadresse" name="leveringsadresse" placeholder="Din leveringsadresse" required></textarea>
+            </div>
 
-                    <button type="submit">Registrer deg</button>
-                </form>
-            </section>
+            <!-- Knapp for å sende inn registreringsskjemaet -->
+            <button type="submit">Registrer deg</button>
+        </form>
+    </section>
+
 
             <?php
             include 'database.php';
